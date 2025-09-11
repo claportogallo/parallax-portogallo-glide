@@ -171,7 +171,7 @@ All colors MUST be HSL.
 
   /* Project card hover effects */
   .project-card {
-    @apply relative overflow-hidden rounded-2xl transition-all duration-500 group cursor-pointer;
+    @apply relative overflow-hidden rounded-2xl transition-all duration-500 cursor-pointer;
     box-shadow: var(--shadow-soft);
   }
 
