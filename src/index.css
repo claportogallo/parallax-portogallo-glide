@@ -8,35 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Architectural color palette */
+    --background: 42 30% 97%;
+    --foreground: 25 15% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 25% 98%;
+    --card-foreground: 25 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 25% 98%;
+    --popover-foreground: 25 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 25 15% 15%;
+    --primary-foreground: 42 30% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 35 20% 92%;
+    --secondary-foreground: 25 15% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 35 15% 90%;
+    --muted-foreground: 25 10% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 30 25% 85%;
+    --accent-foreground: 25 15% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 42 30% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 25 15% 15%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Architectural design tokens */
+    --warm-stone: 35 25% 85%;
+    --deep-brown: 25 30% 20%;
+    --cream-white: 42 30% 97%;
+    --soft-gray: 30 8% 70%;
+    --accent-gold: 45 60% 75%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--cream-white)) 0%, hsl(var(--warm-stone)) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsl(var(--deep-brown) / 0.8) 0%, hsl(var(--deep-brown) / 0.4) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(var(--cream-white) / 0.1) 0%, hsl(var(--warm-stone) / 0.05) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(var(--deep-brown) / 0.08);
+    --shadow-float: 0 8px 40px hsl(var(--deep-brown) / 0.12);
+    --shadow-deep: 0 20px 60px hsl(var(--deep-brown) / 0.15);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-parallax: transform 0.1s linear;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +78,48 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 25 15% 8%;
+    --foreground: 42 30% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 15% 10%;
+    --card-foreground: 42 30% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 15% 10%;
+    --popover-foreground: 42 30% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 42 30% 95%;
+    --primary-foreground: 25 15% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 25 10% 15%;
+    --secondary-foreground: 42 30% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 25 10% 15%;
+    --muted-foreground: 30 8% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 25 15% 20%;
+    --accent-foreground: 42 30% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 42 30% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 25 10% 18%;
+    --input: 25 10% 18%;
+    --ring: 42 30% 95%;
+
+    /* Dark mode architectural tokens */
+    --warm-stone: 25 15% 20%;
+    --deep-brown: 42 30% 95%;
+    --cream-white: 25 15% 8%;
+    --soft-gray: 30 8% 40%;
+    --accent-gold: 45 50% 60%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(var(--cream-white)) 0%, hsl(var(--warm-stone)) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsl(var(--deep-brown) / 0.8) 0%, hsl(var(--deep-brown) / 0.4) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(var(--cream-white) / 0.1) 0%, hsl(var(--warm-stone) / 0.05) 100%);
+
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --shadow-float: 0 8px 40px hsl(0 0% 0% / 0.4);
+    --shadow-deep: 0 20px 60px hsl(0 0% 0% / 0.5);
   }
 }
 
@@ -100,6 +129,105 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-light;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass morphism navigation */
+  .glass-nav {
+    @apply fixed top-6 right-6 z-50 backdrop-blur-md bg-background/70 border border-border/50 rounded-2xl px-6 py-3;
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Parallax container */
+  .parallax-container {
+    @apply relative overflow-hidden;
+    perspective: 1000px;
+  }
+
+  .parallax-layer {
+    @apply absolute inset-0;
+    transform-style: preserve-3d;
+    transition: var(--transition-parallax);
+  }
+
+  /* Hero text styling */
+  .hero-title {
+    @apply text-6xl md:text-8xl font-light tracking-tight text-foreground;
+    font-family: 'Inter', sans-serif;
+    line-height: 0.9;
+  }
+
+  .hero-subtitle {
+    @apply text-xl md:text-2xl font-light text-muted-foreground;
+    letter-spacing: 0.02em;
+  }
+
+  /* Project card hover effects */
+  .project-card {
+    @apply relative overflow-hidden rounded-2xl transition-all duration-500 group cursor-pointer;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-float);
+  }
+
+  .project-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-deep-brown/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 z-10;
+  }
+
+  .project-card:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Floating elements */
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-element:nth-child(2n) {
+    animation-delay: -2s;
+    animation-duration: 8s;
+  }
+
+  .floating-element:nth-child(3n) {
+    animation-delay: -4s;
+    animation-duration: 7s;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes parallax-slow {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+}
+
+@keyframes parallax-fast {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100px);
   }
 }

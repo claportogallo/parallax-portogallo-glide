@@ -47,16 +47,25 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+        // Architectural color tokens
+        "warm-stone": "hsl(var(--warm-stone))",
+        "deep-brown": "hsl(var(--deep-brown))",
+        "cream-white": "hsl(var(--cream-white))",
+        "soft-gray": "hsl(var(--soft-gray))",
+        "accent-gold": "hsl(var(--accent-gold))",
+      },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-overlay": "var(--gradient-overlay)",
+        "gradient-glass": "var(--gradient-glass)",
+      },
+      boxShadow: {
+        "soft": "var(--shadow-soft)",
+        "float": "var(--shadow-float)",
+        "deep": "var(--shadow-deep)",
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
