@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import heroBg from "@/assets/hero-bg.jpg";
-import floatingShapes from "@/assets/floating-shapes.png";
 
 const ParallaxHero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -26,7 +24,7 @@ const ParallaxHero = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${heroBg})`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80')`,
             transform: 'scale(1.1)',
           }}
         />
@@ -41,17 +39,8 @@ const ParallaxHero = () => {
         }}
       >
         <div className="relative h-full w-full">
-          <img
-            src={floatingShapes}
-            alt=""
-            className="absolute top-1/4 right-1/4 w-64 h-48 opacity-30 floating-element"
-          />
-          <img
-            src={floatingShapes}
-            alt=""
-            className="absolute bottom-1/4 left-1/4 w-48 h-36 opacity-20 floating-element"
-            style={{ transform: "rotate(45deg)" }}
-          />
+          <div className="absolute top-1/4 right-1/4 w-64 h-48 opacity-30 floating-element bg-accent-gold/20 rounded-3xl blur-xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-48 h-36 opacity-20 floating-element bg-warm-stone/30 rounded-2xl blur-lg" style={{ transform: "rotate(45deg)" }} />
         </div>
       </div>
 
