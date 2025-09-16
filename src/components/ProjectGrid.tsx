@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ProjectGrid = () => {
   const gridRef = useRef<HTMLDivElement>(null);
+  const [activeFilter, setActiveFilter] = useState("All");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,8 +59,26 @@ const ProjectGrid = () => {
       location: "Milano · 2023",
       category: "Architecture",
       image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=80"
+    },
+    {
+      title: "Apartment Restoration",
+      location: "Roma · 2024",
+      category: "Residential",
+      image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&q=80"
+    },
+    {
+      title: "Office Redesign",
+      location: "Milano · 2023",
+      category: "Commercial",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80"
     }
   ];
+
+  const categories = ["All", ...Array.from(new Set(projects.map(project => project.category)))];
+  
+  const filteredProjects = activeFilter === "All" 
+    ? projects 
+    : projects.filter(project => project.category === activeFilter);
 
   return (
     <section id="projects" className="py-24 px-8">
@@ -68,16 +87,33 @@ const ProjectGrid = () => {
           <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground mb-6">
             Selected Works
           </h2>
-          <p className="text-xl text-muted-foreground font-light">
+          <p className="text-xl text-muted-foreground font-light mb-8">
             A curated collection of architectural and design projects
           </p>
+          
+          {/* Category Filters */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveFilter(category)}
+                className={`px-6 py-3 rounded-2xl transition-all duration-300 tracking-wide ${
+                  activeFilter === category
+                    ? 'bg-primary text-primary-foreground shadow-float'
+                    : 'bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div 
           ref={gridRef}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
         >
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <div
               key={index}
               className="project-card group"
