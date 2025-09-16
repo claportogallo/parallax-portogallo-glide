@@ -1,6 +1,7 @@
 import ParallaxHero from "@/components/ParallaxHero";
 import FloatingNavigation from "@/components/FloatingNavigation";
 import ProjectGrid from "@/components/ProjectGrid";
+import AboutMeSection from "@/components/AboutMeSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 
@@ -12,6 +13,7 @@ const Index = () => {
       <main>
         <ParallaxHero />
         <ProjectGrid />
+        <AboutMeSection />
         <AboutSection />
         <ContactSection />
         
