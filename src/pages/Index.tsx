@@ -1,20 +1,26 @@
-import ParallaxHero from "@/components/ParallaxHero";
-import FloatingNavigation from "@/components/FloatingNavigation";
-import ProjectGrid from "@/components/ProjectGrid";
-import AboutMeSection from "@/components/AboutMeSection";
-import AboutSection from "@/components/AboutSection";
+import { useState } from "react";
+import Preloader from "@/components/Preloader";
+import EnhancedParallaxHero from "@/components/EnhancedParallaxHero";
+import EnhancedFloatingNavigation from "@/components/EnhancedFloatingNavigation";
+import EnhancedProjectGrid from "@/components/EnhancedProjectGrid";
+import EnhancedAboutSection from "@/components/EnhancedAboutSection";
 import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
+  const [showPreloader, setShowPreloader] = useState(true);
+
+  if (showPreloader) {
+    return <Preloader onComplete={() => setShowPreloader(false)} />;
+  }
+
   return (
     <div className="relative">
-      <FloatingNavigation />
+      <EnhancedFloatingNavigation />
       
       <main>
-        <ParallaxHero />
-        <ProjectGrid />
-        <AboutMeSection />
-        <AboutSection />
+        <EnhancedParallaxHero />
+        <EnhancedProjectGrid />
+        <EnhancedAboutSection />
         <ContactSection />
         
         {/* Footer */}
