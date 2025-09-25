@@ -1,44 +1,63 @@
 import { useState } from "react";
-import Preloader from "@/components/Preloader";
-import EnhancedParallaxHero from "@/components/EnhancedParallaxHero";
-import EnhancedFloatingNavigation from "@/components/EnhancedFloatingNavigation";
+import EnhancedPreloader from "@/components/EnhancedPreloader";
+import EnhancedFloatingTabs from "@/components/EnhancedFloatingTabs";
+import EnhancedScrollDots from "@/components/EnhancedScrollDots";
 import EnhancedProjectGrid from "@/components/EnhancedProjectGrid";
 import EnhancedAboutSection from "@/components/EnhancedAboutSection";
 import ContactSection from "@/components/ContactSection";
+import logoImage from "@/assets/logo.png";
 
 const Index = () => {
-  const [showPreloader, setShowPreloader] = useState(true);
+  const [currentMode, setCurrentMode] = useState('home');
 
-  if (showPreloader) {
-    return <Preloader onComplete={() => setShowPreloader(false)} />;
-  }
+  const handleTabClick = (tabId: string) => {
+    setCurrentMode(tabId === 'projects' ? 'home' : tabId);
+  };
 
   return (
-    <div className="relative">
-      <EnhancedFloatingNavigation />
+    <div className="min-h-screen">
+      <EnhancedPreloader />
+      <EnhancedScrollDots />
       
-      <main>
-        <EnhancedParallaxHero />
-        <EnhancedProjectGrid />
-        <EnhancedAboutSection />
-        <ContactSection />
-        
-        {/* Footer */}
-        <footer className="py-12 px-8 border-t border-border bg-secondary/20">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-sm text-muted-foreground">
-              © 2025 Portogallo.Design. All rights reserved.
+      {/* Header */}
+      <header className="topbar left fixed left-0 top-0 p-5 z-[140]">
+        <div className="brand">
+          <a href="#" onClick={() => setCurrentMode('home')}>
+            <img 
+              src={logoImage}
+              alt="Portogallo.Design"
+              className="logo-img"
+              style={{ height: "var(--logo-site)" }}
+            />
+          </a>
+        </div>
+      </header>
+
+      <EnhancedFloatingTabs onTabClick={handleTabClick} />
+
+      {/* Main Content */}
+      <main className="stage pt-32 px-8 pb-12">
+        {currentMode === 'home' && (
+          <div className="fade-in-element">
+            <div className="text-center mb-16">
+              <h1 className="text-5xl md:text-7xl font-light tracking-tight mb-6">
+                Portogallo.Design
+              </h1>
+              <p className="text-xl opacity-70 font-light max-w-2xl mx-auto">
+                Architettura, Design & Artigianato
+              </p>
             </div>
-            <div className="flex items-center gap-8 text-sm text-muted-foreground">
-              <span>Firenze, Italia</span>
-              <span>•</span>
-              <span>Architecture & Design</span>
-            </div>
+            <EnhancedProjectGrid />
           </div>
-        </footer>
+        )}
+
+        {currentMode === 'about' && <EnhancedAboutSection />}
+        {currentMode === 'contact' && <ContactSection />}
       </main>
     </div>
   );
 };
+
+export default Index;
 
 export default Index;

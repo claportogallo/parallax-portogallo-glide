@@ -1,9 +1,33 @@
+// Import delle immagini placeholder generate
+import gelateria1 from "@/assets/projects/gelateria-1.jpg";
+import gelateria2 from "@/assets/projects/gelateria-2.jpg";
+import gelateria3 from "@/assets/projects/gelateria-3.jpg";
+import david1 from "@/assets/projects/david-1.jpg";
+import david2 from "@/assets/projects/david-2.jpg";
+import home1 from "@/assets/projects/home-1.jpg";
+import home2 from "@/assets/projects/home-2.jpg";
+import home3 from "@/assets/projects/home-3.jpg";
+import vaso1 from "@/assets/projects/vaso-1.jpg";
+import vaso2 from "@/assets/projects/vaso-2.jpg";
+import wedding1 from "@/assets/projects/wedding-1.jpg";
+import wedding2 from "@/assets/projects/wedding-2.jpg";
+import wedding3 from "@/assets/projects/wedding-3.jpg";
+import villa1 from "@/assets/projects/villa-1.jpg";
+import villa2 from "@/assets/projects/villa-2.jpg";
+import villa3 from "@/assets/projects/villa-3.jpg";
+import automation1 from "@/assets/projects/automation-1.jpg";
+import about1 from "@/assets/projects/about-1.jpg";
+import about2 from "@/assets/projects/about-2.jpg";
+import sculpture1 from "@/assets/projects/sculpture-1.jpg";
+
 export interface Project {
   title: string;
   meta: string;
   cats: string[];
-  desc: string;
+  desc?: string;
   images: string[];
+  inlineText?: boolean;
+  texts?: string[];
 }
 
 export const PROJECTS: Record<string, Project> = {
@@ -32,12 +56,7 @@ L'esperienza che si vuole regalare al cliente, possa questo essere un turista di
 Link:
 <a href="https://www.instagram.com/barroccinofirenze/" target="_blank" rel="noopener noreferrer">Instagram</a>
 <a href="https://gelateriabarroccino.it/" target="_blank" rel="noopener noreferrer">Sito ufficiale</a>`,
-    images: [
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600", 
-      "/api/placeholder/800/600",
-      "/api/placeholder/800/600"
-    ]
+    images: [gelateria1, gelateria2, gelateria3]
   },
 
   "New Brand David": { 
